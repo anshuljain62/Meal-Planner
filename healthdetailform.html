@@ -1,0 +1,140 @@
+<form  name="healthForm" ng-submit="" novalidate>
+    <div class="row">
+        <div class="col-md-6">
+
+
+            <div class="row">
+                <div class="col-md-6">
+                    <fieldset class="form-group">
+                        <label for="gender" class="control-label">I am </label>
+                        <select class="form-control" ng-model="health.gender" ng-options="x for x in gender_category" id="gender" name="name" required></select>
+                    </fieldset>
+                </div><!-- col -->
+                </div>
+
+
+            
+
+
+                <div class="row">
+                <div class="col-md-6">
+                    <fieldset class="form-group">
+                        <label for="fname" class="control-label">First Name </label>
+                        <input class="form-control" ng-model="health.first_name" id="fname" name="first_name" required>
+                    </fieldset>
+                </div><!-- col -->
+
+
+
+                <div class="col-md-6">
+                    <fieldset class="form-group">
+                        <label for="lname" class="control-label">Last Name </label>
+                        <input class="form-control" ng-model="health.last_name" id="lname" name="last_name" required>
+                    </fieldset>
+                </div><!-- col -->
+            </div><!-- row -->
+
+            <div class="row">
+                <div class="col-md-4">
+                    <fieldset class="form-group">
+                        <label for="height_cm" class="control-label">Height (in cms)</label>
+                        <input class="form-control" ng-model="health.height_cm" id="height_cm" name="height_cm">
+                    </fieldset>
+                </div><!-- col -->
+
+
+
+
+                <div class="col-md-4">
+                    <fieldset class="form-group">
+                        <label for="weight_kg" class="control-label">Weight (in Kgs)</label>
+                        <input type="number" class="form-control" ng-model="health.weight_kg" id="weight_kg" name="weight_kg">
+                    </fieldset>
+                </div><!-- col -->
+
+
+
+
+                <div class="col-md-4">
+                    <fieldset class="form-group">
+                        <label for="age" class="control-label">Age </label>
+                        <input class="form-control" ng-model="health.age" id="age" name="age">
+                    </fieldset>
+                </div><!-- col -->
+
+            </div><!-- row -->
+
+
+            <div class="row">
+                <div class="col-md-6">
+                    <fieldset class="form-group">
+                        <label for="body_fat" class="control-label">Body Fat</label>
+                        <select class="form-control" ng-model="health.body_fat" ng-options="x for x in body_fat_category" id="body_fat" name="body_fat" required></select>
+                    </fieldset>
+                </div><!-- col -->
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-6">
+                    <fieldset class="form-group">
+                        <label for="act_level" class="control-label">Activity Level</label>
+                        <select class="form-control" ng-model="health.act_level" ng-options="x for x in act_level_category" id="act_level" name="act_level" required></select>
+                    </fieldset>
+                </div><!-- col -->
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-7">
+                    <fieldset class="form-group">
+                        <label for="wt_goal" class="control-label">Weight Goal (optional) </label>
+                        <input type="number" class="form-control" ng-model="health.wt_goal" id="wt_goal" name="wt_goal">
+                    </fieldset>
+                </div><!-- col -->
+
+        </div>
+
+
+        <div class="row">
+
+                <div class="col-md-7">
+                    <fieldset class="form-group">
+                        <label for="desired_change" class="control-label">Weekly Desired Change (In Kgs) (optional) </label>
+                        <input class="form-control" ng-model="health.desired_change" id="desired_change" name="desired_change">
+                    </fieldset>
+                </div><!-- col -->
+
+            </div><!-- row -->
+
+
+        </div><!-- row -->
+
+
+
+</div>
+
+</form>
+
+
+<h3>I want to</h3>
+<button ng-if="health.weight_kg > health.wt_goal" type="button" class="btn btn-primary" ng-click="lose_weight()">LOSE WEIGHT</button>
+<button ng-if="health.weight_kg == health.wt_goal" type="button" class="btn btn-success" ng-click="maintain_weight()">MAINTAIN HEALTH</button>
+<button ng-if="health.weight_kg < health.wt_goal" type="button" class="btn btn-info" ng-click="gain_weight()">GAIN WEIGHT</button>
+
+<h4>You should eat {{cal_required}} Calories per  day . </h4><br>
+
+
+
+
+<center><button type="button" class="btn btn-danger" ng-click="change_state()">Go to Meal Planner </button></center>
+    <br>
+<br>
+
+
+
+
+
+
+
+
